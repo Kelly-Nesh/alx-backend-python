@@ -11,10 +11,10 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     return the list of all the delays (float values)
     list to be in ascending order
     """
-    delay_list = [await wait_random(max_delay) for i in range(n)]
-    n = len(delay_list)
-    for i in range(n):
-        for j in range(0, n-i-1):
+    delay_list: List[float] = [await wait_random(max_delay) for i in range(n)]
+    listlen: int = len(delay_list)
+    for i in range(listlen):
+        for j in range(0, listlen-i-1):
             if delay_list[j] > delay_list[j+1]:
                 delay_list[j], delay_list[j+1] = delay_list[j+1], delay_list[j]
     return delay_list
