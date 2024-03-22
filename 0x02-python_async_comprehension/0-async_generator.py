@@ -1,12 +1,10 @@
 #!usr/bin/env python3
 """Async Generator"""
-
-
 import asyncio
 import random
 
 
-async def async_generator():
+async def async_generator() -> AsyncIterator[float]:
     """
     An asynchronous generator that yields random numbers between 0 and 10
     after a 1 second delay.
